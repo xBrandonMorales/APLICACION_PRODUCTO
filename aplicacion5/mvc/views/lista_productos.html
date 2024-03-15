@@ -2,10 +2,10 @@ $def with(productos)
 <body class="m-0 p-0 font-sans bg-gray-100">
   <div class="container py-5">
     <div class="row mb-4">
-      <div class="col-auto">
+      <div class="col-sm-auto">
         <a href="/insertar" class="btn btn-primary">Insertar</a>
       </div>
-      <div class="col-auto">
+      <div class="col-sm-auto mt-3 mt-sm-0">
         <form class="input-group" method="POST" action="">
           <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Buscar producto" required>
           <button type="submit" class="btn btn-dark">Buscar</button>
@@ -42,12 +42,11 @@ $def with(productos)
           <!-- Aquí termina la implementación de la paginación -->
         </tbody>
       </table>
-      
     </div>
 
     <!-- Implementación de la paginación -->
-    <nav aria-label="Page navigation example">
-      <ul class="pagination">
+    <nav class="mt-4" aria-label="Page navigation example">
+      <ul class="pagination justify-content-center">
         <li class="page-item">
           <a class="page-link" href="#" aria-label="Previous">
             <span aria-hidden="true">&laquo;</span>
@@ -64,6 +63,5 @@ $def with(productos)
       </ul>
     </nav>
     <!-- Fin de la implementación de la paginación -->
-
   </div>
 </body>

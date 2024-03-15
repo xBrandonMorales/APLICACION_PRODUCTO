@@ -1,3 +1,11 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Insertar Producto</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
 <body class="m-0 p-0 font-sans bg-gray-100">
   <div class="container py-5">
     <form class="p-6" method="POST" enctype="multipart/form-data" action="">
@@ -32,3 +40,17 @@
       </div>
     </form>
   </div>
+
+  <script>
+    document.getElementById("insertarProductoForm").addEventListener("submit", function(event) {
+      var precio = document.getElementById("precio").value;
+      var existencia = document.getElementById("existencia").value;
+      
+      if (precio < 0 || existencia < 0) {
+        alert("El precio y la existencia no pueden ser negativos.");
+        event.preventDefault();
+      }
+    });
+  </script>
+</body>
+</html>
