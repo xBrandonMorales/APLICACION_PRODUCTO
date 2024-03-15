@@ -1,0 +1,37 @@
+$def with (producto)
+<body class="m-0 p-0 font-sans bg-gray-100">
+  <div class="container py-5">
+    <form class="p-6" method="POST" action="" enctype="multipart/form-data">
+      <div class="container max-w-screen-lg mx-auto">
+        <h2 class="font-semibold text-xl text-gray-600">Actualizar Producto</h2>
+        $for dato in producto:
+        <div class="row g-3">
+          <input value="$dato['id_productos']" type="hidden" id="producto" name="producto">
+          <div class="col-md-12">
+            <label for="nombre_producto" class="form-label">Producto</label>
+            <input type="text" name="nombre_producto" id="nombre_producto" class="form-control" value="$dato['nombre']" placeholder="Tu producto" required/>
+          </div>
+          <div class="col-md-12">
+            <label for="descripcion" class="form-label">Descripción</label>
+            <textarea id="descripcion" name="descripcion" rows="3" class="form-control" placeholder="Escribe una descripción del producto" required>$dato['descripción']</textarea>
+          </div>
+          <div class="col-md-6">
+            <label for="precio" class="form-label">Precio</label>
+            <input type="number" name="precio" id="precio" class="form-control" value="$dato['precio']" placeholder="Precio del producto" required/>
+          </div>
+          <div class="col-md-6">
+            <label for="existencia" class="form-label">Existencia</label>
+            <input type="number" name="existencia" id="existencia" class="form-control" value="$dato['existencias']" placeholder="Existencias del producto" required/>
+          </div>
+          <div class="col-md-12">
+            <label for="imagen" class="form-label">Imagen</label>
+            <input id="imagen" name="imagen" type="file" class="form-control" accept="image/*"/>
+          </div>
+          <div class="col-md-12 text-end">
+            <button type="submit" class="btn btn-primary">Actualizar</button>
+            <a href="/" class="btn btn-danger ms-2">Cancelar</a>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>

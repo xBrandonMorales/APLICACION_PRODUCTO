@@ -1,0 +1,50 @@
+$def with(productos)
+<body class="m-0 p-0 font-sans bg-gray-100">
+    <div class="container py-5">
+      <form class="row g-3 align-items-center mb-4" method="POST" action="">
+        <div class="col-auto">
+          <a href="/insertar" class="btn btn-warning">Insertar</a>
+        </div>
+        <div class="col-auto">
+          <div class="input-group">
+            <span class="input-group-text">
+              <svg class="w-5 h-5 text-gray-500" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path></svg>
+            </span>
+            <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Busca un producto" required>
+          </div>
+        </div>
+        <div class="col-auto">
+          <button type="submit" class="btn btn-info">Buscar</button>
+        </div>
+      </form>
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">Nombre</th>
+              <th scope="col">Descripción</th>
+              <th scope="col">Precio</th>
+              <th scope="col">Existencias</th>
+              <th scope="col">Imagen</th>
+              <th scope="col">Opciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            $for campo in productos:
+            <tr>
+              <td>$campo['nombre']</td>
+              <td>$campo['descripción']</td>
+              <td>$campo['precio']</td>
+              <td>$campo['existencias']</td>
+              <td><img src="data:image/$campo['extension'];base64, $campo['imagen']" alt="" width="45" height="45"></td>
+              <td>
+                <a href="/detalle/$campo['id_productos']" class="btn btn-primary">Detalles</a>
+                <a href="/actualizar/$campo['id_productos']" class="btn btn-success">Actualizar</a>
+                <a href="/borrar/$campo['id_productos']" class="btn btn-danger">Borrar</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </body>

@@ -1,0 +1,34 @@
+<body class="m-0 p-0 font-sans bg-gray-100">
+  <div class="container py-5">
+    <form class="p-6" method="POST" enctype="multipart/form-data" action="">
+      <div class="container max-w-screen-lg mx-auto">
+        <h2 class="font-semibold text-xl text-gray-600">Insertar Producto</h2>
+        <div class="row g-3">
+          <div class="col-md-12">
+            <label for="nombre_producto" class="form-label">Producto</label>
+            <input type="text" name="nombre_producto" id="nombre_producto" class="form-control" value="" placeholder="Tu producto" required/>
+          </div>
+          <div class="col-md-12">
+            <label for="descripcion" class="form-label">Descripción</label>
+            <textarea id="descripcion" name="descripcion" rows="3" class="form-control" placeholder="Escribe una descripción del producto" required></textarea>
+          </div>
+          <div class="col-md-6">
+            <label for="precio" class="form-label">Precio</label>
+            <input type="number" name="precio" id="precio" class="form-control" value="" placeholder="" required/>
+          </div>
+          <div class="col-md-6">
+            <label for="existencia" class="form-label">Existencia</label>
+            <input type="number" name="existencia" id="existencia" class="form-control" value="" placeholder="" required/>
+          </div>
+          <div class="col-md-12">
+            <label for="imagen" class="form-label">Imagen</label>
+            <input id="imagen" name="imagen" type="file" class="form-control" accept="image/*" required/>
+          </div>
+          <div class="col-md-12 text-end">
+            <button type="submit" class="btn btn-primary">Ingresar</button>
+            <a href="/" class="btn btn-danger ms-2">Cancelar</a>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>

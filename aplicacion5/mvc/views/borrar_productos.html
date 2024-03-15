@@ -1,0 +1,40 @@
+$def with (producto)
+<body class="m-0 p-0 font-sans bg-gray-100">
+    <div class="container py-5">
+      <form class="w-full max-w-md p-4 bg-white border border-gray-200 rounded-lg shadow-sm" method="POST" action="">
+        <div class="mb-4">
+          <h5 class="text-xl font-bold leading-none text-gray-900">Detalles del producto</h5>
+        </div>
+        <div class="flow-root">
+          $for dato in producto:
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item d-flex align-items-start">
+              <div>
+                <img src="data:image/$dato['extension'];base64, $dato['imagen']" alt="" width="150px" height="150px">
+              </div>
+              <div class="ms-3">
+                <label class="text-sm font-medium text-gray-900" for="nombre">Nombre del producto:</label>
+                <input class="form-control" value="$dato['nombre']" type="text" id="nombre" name="nombre" readonly>
+              </div>
+            </li>
+            <li class="list-group-item">
+              <label class="text-sm font-medium text-gray-900" for="descripcion">Descripción:</label>
+              <input class="form-control" value="$dato['descripción']" type="text" id="descripcion" name="descripcion" readonly>
+            </li>
+            <li class="list-group-item">
+              <label class="text-sm font-medium text-gray-900" for="precio">Precio:</label>
+              <input class="form-control" value="$dato['precio']" type="number" id="precio" name="precio" readonly>
+            </li>
+            <li class="list-group-item">
+              <label class="text-sm font-medium text-gray-900" for="existencias">Existencias:</label>
+              <input class="form-control" value="$dato['existencias']" type="number" id="existencias" name="existencias" readonly>
+            </li>
+          </ul>
+        </div>
+        <div class="text-end mt-3">
+          <button type="submit" class="btn btn-danger me-2">Eliminar</button>
+          <a href="/" class="btn btn-primary">Cancelar</a>
+        </div>
+      </form>
+    </div>
+  </body>

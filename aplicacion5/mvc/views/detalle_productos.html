@@ -1,0 +1,35 @@
+$def with (producto)
+<body class="m-0 p-0 font-sans bg-gray-100">
+    <div class="container py-5">
+      <div class="w-full max-w-md p-4 bg-white border border-gray-200 rounded-lg shadow-sm">
+        <div class="mb-4">
+          <h5 class="text-xl font-bold leading-none text-gray-900">Detalles del producto</h5>
+        </div>
+        <div class="flow-root">
+          $for dato in producto:
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item d-flex align-items-start">
+              <div>
+                <img src="data:image/$dato['extension'];base64, $dato['imagen']" alt="" width="150px" height="150px">
+              </div>
+              <div class="ms-3">
+                <span class="fw-bold">Nombre del producto:</span> $dato['nombre']
+              </div>
+            </li>
+            <li class="list-group-item">
+              <span class="fw-bold">Descripción:</span> $dato['descripción']
+            </li>
+            <li class="list-group-item">
+              <span class="fw-bold">Precio:</span> $dato['precio'] MXN
+            </li>
+            <li class="list-group-item">
+              <span class="fw-bold">Existencias:</span> $dato['existencias']
+            </li>
+          </ul>
+        </div>
+        <div class="text-end mt-3">
+          <a href="/" class="btn btn-primary">Regresar</a>
+        </div>
+      </div>
+    </div>
+  </body>
